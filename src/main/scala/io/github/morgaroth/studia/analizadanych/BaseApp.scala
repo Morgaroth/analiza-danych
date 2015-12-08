@@ -30,13 +30,15 @@ trait BaseApp extends XYDataImplicits with XYChartImplicits {
 
   def prefix: String = ""
 
+  def postfix: String = ""
+
   def filesFilter(name: String): Boolean = {
-    name startsWith prefix
+    (name startsWith prefix) && (name endsWith postfix)
   }
 
-  val defaultLineParser = (l: String) => l.toDouble
+  def defaultLineParser(l: String): Double = l.toDouble
 
-  val defaultFileParser = (f: File) => {
+  lazy val defaultFileParser = (f: File) => {
     Source.fromFile(f).getLines().toList.map(defaultLineParser)
   }
 

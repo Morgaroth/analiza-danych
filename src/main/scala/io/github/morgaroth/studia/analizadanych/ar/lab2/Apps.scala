@@ -1,6 +1,7 @@
 package io.github.morgaroth.studia.analizadanych.ar.lab2
 
 import io.github.morgaroth.studia.analizadanych._
+import io.github.morgaroth.studia.analizadanych.Procs._
 import org.sameersingh.scalaplot.{XYChart, XYChartImplicits}
 
 import scala.collection.immutable.Iterable
